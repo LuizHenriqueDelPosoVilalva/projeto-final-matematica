@@ -3,19 +3,19 @@
 alcool = float(input("Digite o valor do álcool por litro(Etanol) em reais, com ponto, não virgula: R$:"))
 gasolina = float(input("Digite o valor da gasolina por litro em reais, com ponto, não virgula: R$:"))
 
-def verificacao (red):
+def verificacao (al,gas):
+  rendimento = al/gas
   #comparando qual é melhor
-  if red > 0 and red <= 0.7:
+  if rendimento > 0 and rendimento <= 0.7:
     resultado ="Vale mais a pena abastecer com álcool!"
-  if red > 0.7:
+  if rendimento > 0.7:
     resultado = "Vale mais a pena abastecer com gasolina!"
   
   return resultado
 
 #verificando valores digitados pelo usuário 
 if gasolina and alcool > 0:
-  rendimento = alcool/gasolina
-  apresentar = verificacao(rendimento)
+  apresentar = verificacao(alcool,gasolina)
   print(apresentar)
 else:
   print("Digite valores maiores que 0")
