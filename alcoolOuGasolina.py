@@ -14,7 +14,7 @@ def verificacao (al,gas):
   return resultado
 
 #verificando valores digitados pelo usuário 
-if gasolina and alcool > 0:
+if gasolina > 0 and alcool > 0:
   apresentar = verificacao(alcool,gasolina)
   print(apresentar)
 else:
