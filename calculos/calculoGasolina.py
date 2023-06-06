@@ -10,7 +10,7 @@ def valor_combustivel_a_pagar (dis, cons, preco):
   else:
   #Formula de calculo do valor a pagar na gasolina de acordo com a distancia a ser percorrida e o consumo médio do usuario
     resultado = (dis/cons)*preco
-    apresentar = "O valor a pagar na gasolina é R$" +str(resultado)
+    apresentar = f"O valor a pagar na gasolina é R${resultado:.2f}"
   return apresentar
 
 valor = valor_combustivel_a_pagar(distancia,consumo_medio,preco)

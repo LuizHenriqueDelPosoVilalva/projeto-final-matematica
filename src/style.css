@@ -1,0 +1,203 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.barra {
+    background-color: #575656;
+    height: 80px;
+    display: flex;
+}
+
+.barra a {
+    margin-top: 20px;
+    text-decoration: underline;
+    font-size: 40px;
+    height: 50px;
+}
+
+.barra img {
+    width: 90px;
+    height: 80px;
+    margin-left: 10px;
+}
+
+.tittle {
+    background-color: #c2c2c262;
+    height: 100px;
+}
+
+.calc {
+    margin: 60px;
+    padding: 60px;
+    background-color: #c2c2c262;
+    border-radius: 20px;
+    height: 300px;
+    display: flex;
+    gap: 20px;
+}
+.calc h1 {
+    position: absolute;
+    top: 250px;
+}
+.calcalcool {
+    background-color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+
+.calcalcool h4 {
+    margin-left: 20px;
+}
+.calcalcool img {
+    width: 60px;
+    height: 60px;
+    margin: 30px 60px;
+    background-color: #575656;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.gasosaconsumo {
+    background-color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.gasosaconsumo h4 {
+    margin-left: 20px;
+    
+}
+.gasosaconsumo img {
+    width: 60px;
+    height: 60px;
+    margin: 30px 60px;
+    background-color: #575656;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    height: 200px;
+}
+
+.compjuros {
+    background-color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.compjuros h4 {
+    margin-left: 20px;
+    
+}
+.compjuros img {
+    width: 60px;
+    height: 60px;
+    margin: 30px 60px;
+    background-color: #575656;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.simp_juros {
+    background-color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.simp_juros h4 {
+    margin-left: 20px;
+    
+}
+.simp_juros img {
+    width: 60px;
+    height: 60px;
+    margin: 30px 60px;
+    background-color: #575656;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.pricecalc {
+    background-color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.pricecalc h4 {
+    margin-left: 20px;
+    
+}
+.pricecalc img {
+    width: 60px;
+    height: 60px;
+    margin: 30px 60px;
+    background-color: #575656;
+    border-radius: 20px;
+    padding: 10px;
+}
+.saccalc {
+    background-color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.saccalc h4 {
+    margin-left: 20px;
+    
+}
+.saccalc img {
+    width: 60px;
+    height: 60px;
+    margin: 30px 60px;
+    background-color: #575656;
+    border-radius: 20px;
+    padding: 10px;
+}
+.simuladores {
+    position: absolute;
+}
+.calc2 {
+    margin: 60px;
+    padding: 60px;
+    background-color: #c2c2c262;
+    border-radius: 20px;
+    height: 300px;
+    width: 1630px;
+    display: flex;
+    gap: 20px;
+}
+.calc2 h1 {
+    position: absolute;
+    top: 70px   
+}
+
+.imobcalc {
+    background-color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.imobcalc h4 {
+    margin-left: 40px;
+}
+.imobcalc img {
+    width: 60px;
+    height: 60px;
+    margin: 20px 60px;
+    background-color: #575656;
+    border-radius: 20px;
+    padding: 10px;
+}
