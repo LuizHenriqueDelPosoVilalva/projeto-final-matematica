@@ -201,3 +201,10 @@ a {
     border-radius: 20px;
     padding: 10px;
 }
+.barra_de_calculo {
+    margin: 60px;
+    padding: 60px;
+    background-color: #c2c2c262;
+    border-radius: 20px;
+    height: 300px;
+}

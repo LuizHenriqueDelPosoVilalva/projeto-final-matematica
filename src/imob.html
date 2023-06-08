@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="barra">
-                <img src="/imgs/calculatoricon.jpg">
-                <a class="calculator" href="/calculator.html">Calculator</a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="tittle">
-            <h1>Simulador de Financiamento Imobiliário</h1>
-            <h3>Deseja financiar? Utilize o nosso simulador de financiamento de imóvel, descubra se vale a pena e quanto vai pagar no negócio!</h3>
-        </div>
-    </main>
-</body>
+        <div>valor do imovel</div>
+        <input type="number" id="Ivalor_imovel" name="valor_imovel" value="">
+        <div>valor entrada</div>
+        <input type="number" id="Ientrada_valor" name="entrada_valor" value="">
+        <div>taxa de juros</div>
+        <input type="number" id="Itaxa_juros" name="taxa_juros">
+        <div>prazo</div>
+        <input type="number" id="Iprazo" name="valor_prazo">
+        <button id="submit-button" type="submit" py-onclick="calculadora()">Calcular</button>
+        <br><br>
+        <p id="resultado"></p>
+
+        <py-script> 
+            def calculadora(*args, **kwargs):
+                valor_imovel = float(Element('Ivalor_imovel').element.value)
+                entrada_valor = float(Element('Ientrada_valor').element.value)
+                taxa_juros = float(Element('Itaxa_juros').element.value)
+                prazo = float(Element('Iprazo').element.value)
+
+                if valor_imovel <= 0 and entrada_valor <= 0:
+                    resultado = "Digite valores maiores que zero"
+                else:
+                    valor_financiado = valor_imovel - entrada_valor
+                    taxa_juros_mensal = taxa_juros / 100 / 12
+                    parcela = (valor_financiado * taxa_juros_mensal) / (1 - (1 + taxa_juros_mensal) ** -prazo)
+
+                Element("resultado").element.innerHTML = parcela
+                    
+        </py-script>
+    </body>
 </html>
