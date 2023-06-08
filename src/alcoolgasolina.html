@@ -15,11 +15,32 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
+     <py-script>  
+        def verificacao (*ags, **kags):
+            try:
+                gasolina = float(Element('Igasolina').element.value)
+                alcool = float(Element('Ialcool').element.value)
+                if gasolina <= 0 and alcool <= 0:
+                    maior_que_zero = "Digite valores maiores que zero"
+                    Element("text_output").element.innerHTML = maior_que_zero
+                else:
+                    rendimento = alcool/gasolina
+                if rendimento > 0 and rendimento <= 0.7:
+                    resultado ="Vale mais a pena abastecer com álcool!"
+                else:
+                    resultado = "Vale mais a pena abastecer com gasolina!"
+                Element("text_output").element.innerHTML = resultado
+            except ValueError:
+                erro = "Digite os valores"
+                Element("text_output").element.innerHTML = erro
+            except ZeroDivisionError:
+                erro_divisao = "Erro: divisão por zero, digite outros valores."
+    </py-script>
     <header>
         <nav>
             <div class="barra">
                 <img src="imgs/calculatoricon.jpg">
-                <a class="calculator" href="/calculator.html">Calculator</a>
+                <a class="calculator" href="calculator.html">Calculator</a>
             </div>
         </nav>
     </header>
@@ -38,22 +59,6 @@
                 <button id="btn-task" py-click="verificacao()">Calcular</button>
                 <p id="text_output"></p>
             </div>
-            <py-script>  
-                def verificacao (*ags, **kags):
-                    gasolina = float(Element('Igasolina').element.value)
-                    alcool = float(Element('Ialcool').element.value)
-                    if gasolina <= 0 and alcool <= 0:
-                        resultado = "Digite valores maiores que zero"
-                    else:
-                        rendimento = alcool/gasolina
-                    if rendimento > 0 and rendimento <= 0.7:
-                        resultado ="Vale mais a pena abastecer com álcool!"
-                    else:
-                        resultado = "Vale mais a pena abastecer com gasolina!"
-                    
-                    Element("text_output").element.innerHTML = resultado
-            </py-script>
-
     </main>
 </body>
-</html>                                                                                                                                                                                               por que esse código não apresenta o resultado da função
+</html>                                                                                                                                                                                              
