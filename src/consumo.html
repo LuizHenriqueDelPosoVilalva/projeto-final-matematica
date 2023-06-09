@@ -23,14 +23,14 @@
                 media_gasolina =  float(Element('idMediaGasolina').element.value)
 
                 #verificando valores inseridos pelo usuario
-                if gasolina <= 0 and distancia <= 0 and distancia <= 0:
+                if gasolina <= 0 or distancia <= 0 or media_gasolina <= 0:
                     maior_que_zero = "Digite valores maiores que zero"
                     Element("text_output").element.innerHTML = maior_que_zero
-                #Calculo de do combustivel
+                #calculando juros simples
                 else:
-                    resultado = (distancia/media_gasolina)*gasolina
-                
-                Element("text_output").element.innerHTML = f"O valor a pagar na gasolina é R${resultado:.2f}"
+                    calculo = (distancia/media_gasolina)*gasolina
+                    resultado = f"O valor a pagar na gasolina é R${calculo:.2f}"
+                    Element("text_output").element.innerHTML = resultado
             except ValueError:
                 erro = "Digite valores validos"
                 Element("text_output").element.innerHTML = erro
@@ -38,8 +38,8 @@
     <header>
         <nav>
             <div class="barra">
-                <img src="/imgs/calculatoricon.jpg">
-                <a class="calculator" href="/calculator.html">Calculator</a>
+                <img src="imgs/calculatoricon.jpg">
+                <a class="calculator" href="calculator.html">Calculator</a>
             </div>
         </nav>
     </header>
@@ -50,7 +50,7 @@
         </div>
         <div class="barra_de_calculo">
             <h3>Cálculo do Combustível</h3>
-            <form>
+            <div>
                 <label for="fdistancia">Informe a distancia</label>
                 <input type="number" id="idDistacia" name="fdistancia" placeholder="Distância percorrida: km">
                 <label for="fmediaGasolina">Informe o consumo médio de gasolina do seu veiculo</label>
@@ -58,7 +58,7 @@
                 <label for="fgasolina">Preço da gasolina</label>
                 <input type="number" id="idGasolina" name="fgasolina" placeholder="Informe o preço da gasolina por litro da gasolina: R$">
                 <button type="submit" py-click="valor_combustivel_a_pagar()">Calcular</button>
-            </form>
+            </div>
             <p id="text_output"></p>
         </div>
     </main>
