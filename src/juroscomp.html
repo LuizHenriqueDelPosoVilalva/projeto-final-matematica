@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
     <py-script>
@@ -23,12 +26,11 @@
                 if valor_inicial <= 0 or taxa <= 0 or tempo <= 0:
                     maior_que_zero = "Digite valores maiores que zero"
                     Element("text_output").element.innerHTML = maior_que_zero
-                #Calculo de do combustivel
                 else:
                     taxa_ano = (taxa/100)/12
                     tempo_ano = tempo * 12
-                    calculo = valor_inicial*(1+(taxa_ano*tempo_ano))
-                    resultado = f"O valor a pagar na gasolina é R${calculo:.2f}"
+                    calculo = valor_inicial*((1+taxa_ano)**tempo_ano)
+                    resultado = f"O valor do montante é R${calculo:.2f}"
                     Element("text_output").element.innerHTML = resultado
             except ValueError:
                 erro = "Digite valores validos"
@@ -53,11 +55,10 @@
         </div>
         <div class="barra_de_calculo">
             <h3>Simulador de Juros Compostos</h3>
-            <h4>Preço do álcool (etanol)</h4>
             <div>
                 <input type="number" id="idValor_inicial" placeholder="Valor inicial: R$">
-                <input type="number" id="gasolina" name="fgasolina" placeholder="Valor mensal: R$">
-                <input type="number" id="gasolina" name="fgasolina" placeholder="Período em: Anos">
+                <input type="number" id="idTaxa_ano" placeholder="Valor da taxa anual">
+                <input type="number" id="idTempo_ano" placeholder="Período em: Anos">
                 <button type="submit" py-click="juros_composto_ano()">Calcular</button>
                 <p id="text_output"></p>
             </div>

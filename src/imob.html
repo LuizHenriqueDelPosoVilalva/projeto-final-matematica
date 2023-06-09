@@ -21,7 +21,7 @@
 
                 if valor_imovel <= 0 and entrada_valor <= 0 and taxa_juros <=0 and prazo <=0:
                     resultado = "Digite valores maiores que zero"
-                    Element("zerado").element.innerHTML = resultado
+                    Element("resultado").element.innerHTML = resultado
                 else:
                     valor_financiado = valor_imovel - entrada_valor
                     taxa_juros_mensal = (taxa_juros / 100) /12
@@ -34,7 +34,7 @@
                     Element("juros_total").element.innerHTML = f"valor de juros total pago é {juros_total_pago:.2f}"
             except ValueError:
                 erro = "Digite os valores"
-                Element("error").element.innerHTML = erro
+                Element("resultado").element.innerHTML = erro
             except ZeroDivisionError:
                 erro_divisao = "Erro: divisão por zero, digite outros valores."
         </py-script>
@@ -63,8 +63,6 @@
         <input type="number" id="Iprazo" name="valor_prazo">
         <button id="submit-button" type="submit" py-onclick="calculadora()">Calcular</button>
         <br><br>
-        <h5 id='error'></h5>
-        <p id="zerado"></p>
         <p id="resultado"></p>
         <p id="juros_mensal"></p>
         <p id="valor_total"></p>
