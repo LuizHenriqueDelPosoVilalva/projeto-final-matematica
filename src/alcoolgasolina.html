@@ -35,7 +35,7 @@
                     resultado = "Vale mais a pena abastecer com gasolina!"
                 Element("text_output").element.innerHTML = resultado
             except ValueError:
-                erro = "Digite os valores"
+                erro = "Digite valores validos"
                 Element("text_output").element.innerHTML = erro
     </py-script>
     <header>
@@ -53,14 +53,14 @@
         </div>
         <div class="barra_de_calculo">
             <h3>Cálculo de Álcool x Gasolina</h3>
-            <div>
+            <form>
                 <label for="falcool">Alcool</label>
                 <input type="number" id="Ialcool" name="falcool" placeholder="Digite o valor em reais do alcool: R$">
                 <label for="fgasolina">Gasolina</label>
                 <input type="number" id="Igasolina" name="fgasolina" placeholder="Digite o valor em reais da gasolina: R$">
                 <button id="btn-task" py-click="verificacao()">Calcular</button>
-                <p id="text_output"></p>
-            </div>
+            </form>
+            <p id="text_output"></p>
     </main>
 </body>
 </html>                                                                                                                                                                                              
