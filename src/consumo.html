@@ -26,7 +26,6 @@
                 if gasolina <= 0 or distancia <= 0 or media_gasolina <= 0:
                     maior_que_zero = "Digite valores maiores que zero"
                     Element("text_output").element.innerHTML = maior_que_zero
-                #calculando juros simples
                 else:
                     calculo = (distancia/media_gasolina)*gasolina
                     resultado = f"O valor a pagar na gasolina é R${calculo:.2f}"
@@ -60,6 +59,13 @@
                 <button type="submit" py-click="valor_combustivel_a_pagar()">Calcular</button>
             </div>
             <p id="text_output"></p>
+
+
+            <p>
+                Para calcular o valor a ser pago na gasolina com base na distância a percorrer, 
+                consumo médio do carro e o preço da gasolina, você pode usar a seguinte fórmula:
+                Valor a ser pago = (Distância a percorrer / Consumo médio do carro) * Preço da gasolina
+            </p>
         </div>
     </main>
 </body>
