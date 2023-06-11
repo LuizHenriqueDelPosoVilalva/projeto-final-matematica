@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <py-script>
+        def saque_aniversario (*ags, **kags):
+            try:
+                #Pegando valores dos inputs
+                saldo = float(Element('idSaldo_fgts').element.value)
+
+                #verificando valores inseridos pelo usuario
+                if saldo <= 0:
+                    maior_que_zero = "Digite valores maiores que zero"
+                    Element("text_output").element.innerHTML = maior_que_zero
+                elif saldo <= 500:
+                    porcentagem = 50/100
+                    calculo = saldo * porcentagem
+                    resultado = f"O valor do seu saque aniversario é: R${calculo}"
+                    Element("text_output").element.innerHTML = resultado
+                elif saldo > 500 and saldo <= 1000:
+                    porcentagem = 40/100
+                    parcela_fixa = 50
+                    calculo = (saldo*porcentagem) + parcela_fixa
+                    resultado = f"O valor do seu saque aniversario é: R${calculo}"
+                    Element("text_output").element.innerHTML = resultado
+                elif saldo > 1000 and saldo <= 5000:
+                    porcentagem = 30/100
+                    parcela_fixa = 150
+                    calculo = (saldo*porcentagem) + parcela_fixa
+                    resultado = f"O valor do seu saque aniversario é: R${calculo}"
+                    Element("text_output").element.innerHTML = resultado
+                elif saldo > 5000 and saldo <= 10000:
+                    porcentagem = 20/100
+                    parcela_fixa = 650
+                    calculo = calculo = (saldo*porcentagem) + parcela_fixa
+                    resultado = f"O valor do seu saque aniversario é: R${calculo}"
+                    Element("text_output").element.innerHTML = resultado
+                elif saldo > 10000 and saldo <= 15000:
+                    porcentagem = 15/100
+                    parcela_fixa = 1150
+                    calculo = calculo = (saldo*porcentagem) + parcela_fixa
+                    resultado = f"O valor do seu saque aniversario é: R${calculo}"
+                    Element("text_output").element.innerHTML = resultado
+                elif saldo > 15000 and saldo <= 20000:
+                    porcentagem = 10/100
+                    parcela_fixa = 1900
+                    calculo = calculo = (saldo*porcentagem) + parcela_fixa
+                    resultado = f"O valor do seu saque aniversario é: R${calculo}"
+                    Element("text_output").element.innerHTML = resultado
+                else:
+                    porcentagem = 5/100
+                    parcela_fixa = 2900
+                    calculo = calculo = (saldo*porcentagem) + parcela_fixa
+                    resultado = f"O valor do seu saque aniversario é: R${calculo}"
+                    Element("text_output").element.innerHTML = resultado
+            except ValueError:
+                erro = "Digite valores validos"
+                Element("text_output").element.innerHTML = erro
+            except ZeroDivisionError:
+                erro_zero = "Digite valores maiores que zero"
+                Element("text_output").element.innerHTML = erro_zero
+    </py-script>
+    <header>
+        <nav>
+            <div class="barra">
+                <img src="/imgs/calculatoricon.jpg">
+                <a class="calculator" href="/calculator.html">Calculator</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="tittle">
+            <h1>Calculadora de Saque Aniversário</h1>
+            <h3>Juros simples são acrescidos somente em cima do valor inicial ao final de cada período, mantendo assim um crescimento constante. Calcule de forma simples!</h3>
+        </div>
+        <div class="barra_de_calculo">
+            <h3>Simulador de Juros Compostos mensal</h3>
+            <div>
+                <input type="number" id="idSaldo_fgts" placeholder="Digite seu saldo de FGTS: R$">
+                <button type="submit" py-click="saque_aniversario()">Calcular</button>
+                <p id="text_output"></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

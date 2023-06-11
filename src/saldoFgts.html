@@ -15,22 +15,20 @@
 </head>
 <body>
     <py-script>
-        def calcular_inss(*args, **kwargs):
+        def calculo_fgts (*ags, **kags):
             try:
-                salario = float(Element('idsalario').element.value)
-        
-                if salario <= 1320.00:
-                    calculo = salario * 0.075
-                elif salario <= 2571.29:
-                    calculo = salario * 0.09
-                elif salario <= 3856.94:
-                    calculo = salario * 0.12
-                elif salario >=  3856.94:
-                    calculo = min(salario * 0.14, 877.00)
-                    
-        
-                Element("text_output").element.innerHTML = f"O desconto do INSS é: R$ {calculo:.2f}"
-
+                #Pegando valores dos inputs
+                salario = float(Element('idSalario_bruto').element.value)
+                tempo_mes = int(Element('idTempo').element.value)
+                #verificando valores inseridos pelo usuario
+                if salario <= 0 and tempo_mes <= 0:
+                    maior_que_zero = "Digite valores maiores que zero"
+                    Element("text_output").element.innerHTML = maior_que_zero
+                else:
+                    calc_fgts = salario * 0.08
+                    calc_total = calc_fgts * tempo_mes
+                    resultado = f"FGTS por mes é de R${calc_fgts}, a {tempo_mes} mês(mêses) o seu saldo FGTS é de R${calc_total:.2f}"
+                    Element("text_output").element.innerHTML = resultado
             except ValueError:
                 erro = "Digite valores validos"
                 Element("text_output").element.innerHTML = erro
@@ -48,15 +46,15 @@
     </header>
     <main>
         <div class="tittle">
-            <h1>Calculadora de Juros Simples</h1>
+            <h1>Calculadora de Saque Aniversário</h1>
             <h3>Juros simples são acrescidos somente em cima do valor inicial ao final de cada período, mantendo assim um crescimento constante. Calcule de forma simples!</h3>
         </div>
         <div class="barra_de_calculo">
-            <h3>Simulador de Juros Simples</h3>
+            <h3>Simulador de Juros Compostos mensal</h3>
             <div>
-                <input type="number" id="idsalario" placeholder="Valor inicial: R$">
-
-                <button type="submit" py-click="calcular_inss()">Calcular</button>
+                <input type="number" id="idSalario_bruto" placeholder="Digite seu salario bruto">
+                <input type="number" id="idTempo" placeholder="Digite o numero de mêses que está na empresa">
+                <button type="submit" py-click="calculo_fgts()">Calcular</button>
                 <p id="text_output"></p>
             </div>
         </div>
