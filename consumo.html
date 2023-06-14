@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
@@ -26,6 +25,7 @@
                 if gasolina <= 0 or distancia <= 0 or media_gasolina <= 0:
                     maior_que_zero = "Digite valores maiores que zero"
                     Element("text_output").element.innerHTML = maior_que_zero
+                #calculando juros simples
                 else:
                     calculo = (distancia/media_gasolina)*gasolina
                     resultado = f"O valor a pagar na gasolina é R${calculo:.2f}"
@@ -57,15 +57,11 @@
                 <label for="fgasolina">Preço por litro</label>
                 <input type="number" id="idGasolina" name="fgasolina" placeholder="R$">
                 <button type="submit" py-click="valor_combustivel_a_pagar()">Calcular</button>
+                <p id="text_output"></p>
             </div>
-            <p id="text_output"></p>
-
-
-            <p>
-                Para calcular o valor a ser pago na gasolina com base na distância a percorrer, 
+            <p class="descricao">Para calcular o valor a ser pago na gasolina com base na distância a percorrer, 
                 consumo médio do carro e o preço da gasolina, você pode usar a seguinte fórmula:
-                Valor a ser pago = (Distância a percorrer / Consumo médio do carro) * Preço da gasolina
-            </p>
+                Valor a ser pago = (Distância a percorrer / Consumo médio do carro) * Preço da gasolina</p>
         </div>
     </main>
 </body>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -15,22 +15,19 @@
 </head>
 <body>
     <py-script>
-        def juros_composto_ano (*ags, **kags):
+        def calculo_fgts (*ags, **kags):
             try:
                 #Pegando valores dos inputs
-                valor_inicial = float(Element('idValor_inicial').element.value)
-                taxa = float(Element('idTaxa_ano').element.value)
-                tempo =  float(Element('idTempo_ano').element.value)
-
+                salario = float(Element('idSalario_bruto').element.value)
+                tempo_mes = int(Element('idTempo').element.value)
                 #verificando valores inseridos pelo usuario
-                if valor_inicial <= 0 or taxa <= 0 or tempo <= 0:
+                if salario <= 0 and tempo_mes <= 0:
                     maior_que_zero = "Digite valores maiores que zero"
                     Element("text_output").element.innerHTML = maior_que_zero
                 else:
-                    taxa_ano = (taxa/100)/12
-                    tempo_ano = tempo * 12
-                    calculo = valor_inicial*((1+taxa_ano)**tempo_ano)
-                    resultado = f"O valor do montante é R${calculo:.2f}"
+                    calc_fgts = salario * 0.08
+                    calc_total = calc_fgts * tempo_mes
+                    resultado = f"FGTS por mes é de R${calc_fgts}, a {tempo_mes} mês(mêses) o seu saldo FGTS é de R${calc_total:.2f}"
                     Element("text_output").element.innerHTML = resultado
             except ValueError:
                 erro = "Digite valores validos"
@@ -42,26 +39,31 @@
     <header>
         <nav>
             <div class="barra">
-                <img src="/imgs/calculatoricon.jpg">
-                <a class="calculator" href="/calculator.html">Calculator</a>
+                <img src="imgs/calculatoricon.jpg">
+                <a class="calculator" href="calculator.html">Calculator</a>
             </div>
         </nav>
     </header>
     <main>
         <div class="tittle">
-            <h1>Cálculo de Juros Compostos</h1>
-            <h3>Os juros compostos crescem de forma exponencial, pois sua base de cálculo é sempre em cima do montante anterior. 
-                Faça esse cálculo financeiro de forma simples utilizando nossa calculadora!</h3>
+            <h1>Calculadora de Saldo FGTS</h1>
+            <h3>Quer saber quanto vai receber de FGTS? Veja agora como fazer o cálculo do Fundo de Garantia por Tempo de Serviço!</h3>
         </div>
         <div class="barra_de_calculo">
-            <h3>Simulador de Juros Compostos</h3>
+            <h3>Cálculo de Saldo FGTS</h3>
             <div>
-                <input type="number" id="idValor_inicial" placeholder="Valor inicial: R$">
-                <input type="number" id="idTaxa_ano" placeholder="Valor da taxa anual">
-                <input type="number" id="idTempo_ano" placeholder="Período em: Anos">
-                <button type="submit" py-click="juros_composto_ano()">Calcular</button>
+                <label>Digite seu salario bruto</label>
+                <input type="number" id="idSalario_bruto" placeholder="Digite aqui">
+                <label>Digite o numero de mêses que está na empresa</label>
+                <input type="number" id="idTempo" placeholder="Digite aqui">
+                <button type="submit" py-click="calculo_fgts()">Calcular</button>
                 <p id="text_output"></p>
             </div>
+            <p class="descricao">
+                Para fazer o cálculo FGTS é bastante simples, 
+                basta que você multiplique o valor do seu salário bruto (sem ter feito nenhum desconto) 
+                por 8%. O resultado dessa multiplicação é o valor que é descontado mensalmente do seu.
+              </p>
         </div>
     </main>
 </body>

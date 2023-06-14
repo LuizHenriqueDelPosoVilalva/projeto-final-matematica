@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -75,34 +75,37 @@
     <header>
         <nav>
             <div class="barra">
-                <img src="/imgs/calculatoricon.jpg">
-                <a class="calculator" href="/calculator.html">Calculator</a>
+                <img src="imgs/calculatoricon.jpg">
+                <a class="calculator" href="calculator.html">Calculator</a>
             </div>
         </nav>
     </header>
     <main>
         <div class="tittle">
             <h1>Calculadora de Saque Aniversário</h1>
-            <h3>Juros simples são acrescidos somente em cima do valor inicial ao final de cada período, mantendo assim um crescimento constante. Calcule de forma simples!</h3>
+            <h3>Quer saber quanto vai receber de FGTS? Veja agora como fazer o cálculo do Fundo de Garantia por Tempo de Serviço!</h3>
         </div>
         <div class="barra_de_calculo">
-            <h3>Simulador de Juros Compostos mensal</h3>
+            <h3>Cálculo de Saque Aniversário</h3>
             <div>
-                <input type="number" id="idSaldo_fgts" placeholder="Digite seu saldo de FGTS: R$">
+                <label>Digite seu saldo de FGTS</label>
+                <input type="number" id="idSaldo_fgts" placeholder="R$">
                 <button type="submit" py-click="saque_aniversario()">Calcular</button>
                 <p id="text_output"></p>
             </div>
+            <div class="descricaofgts">
+                <p>O calculo é baseado nessa lista:</p>
+                <ul>
+                <li>Para saldos de até R$500, o saque será de até 50% do valor</li>
+                <li>Para saldos de R$500.01 a R$1000, o saque será de até 40% mais uma parcela fixa de R$50</li>
+                <li>Para saldos de R$1000.01 a R$5000, o saque será de até 30% mais uma parcela fixa de R$150</li>
+                <li>Para saldos de R$5000.01 a R$10000, o saque será de até 20% mais uma parcela fixa R$650</li>
+                <li>Para saldos de R$10000.01 até R$15000, o saque será de até 15% mais uma parcela fixa de R$1150</li>
+                <li>Para saldos de R$15000.01 a R$20000, o saque será de até 10% mais uma parcela fixa de R$1900</li>
+                <li>Para saldos acima R$20000.01, o saque será de até 5% mais uma parcela fixa de R$2900</li>
+                </ul>
+            </div>
         </div>
-        <p>O calculo é baseado nessa lista:</p>
-        <ul>
-          <li>Para saldos de até R$500, o saque será de até 50% do valor</li>
-          <li>Para saldos de R$500.01 a R$1000, o saque será de até 40% mais uma parcela fixa de R$50</li>
-          <li>Para saldos de R$1000.01 a R$5000, o saque será de até 30% mais uma parcela fixa de R$150</li>
-          <li>Para saldos de R$5000.01 a R$10000, o saque será de até 20% mais uma parcela fixa R$650</li>
-          <li>Para saldos de R$10000.01 até R$15000, o saque será de até 15% mais uma parcela fixa de R$1150</li>
-          <li>Para saldos de R$15000.01 a R$20000, o saque será de até 10% mais uma parcela fixa de R$1900</li>
-          <li>Para saldos acima R$20000.01, o saque será de até 5% mais uma parcela fixa de R$2900</li>
-        </ul>
     </main>
 </body>
 </html>

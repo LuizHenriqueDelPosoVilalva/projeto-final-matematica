@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -41,25 +41,32 @@
     <header>
         <nav>
             <div class="barra">
-                <img src="/imgs/calculatoricon.jpg">
-                <a class="calculator" href="/calculator.html">Calculator</a>
+                <img src="imgs/calculatoricon.jpg">
+                <a class="calculator" href="calculator.html">Calculator</a>
             </div>
         </nav>
     </header>
     <main>
         <div class="tittle">
-            <h1>Calculadora de Juros Compostos</h1>
+            <h1>Calculadora de Juros Compostos Mensal</h1>
             <h3>Juros simples são acrescidos somente em cima do valor inicial ao final de cada período, mantendo assim um crescimento constante. Calcule de forma simples!</h3>
         </div>
         <div class="barra_de_calculo">
-            <h3>Simulador de Juros Compostos mensal</h3>
+            <h3>Simulador de Juros Compostos Mensal</h3>
             <div>
-                <input type="number" id="idValor_inicial" placeholder="Valor inicial: R$">
-                <input type="number" id="idTaxa" placeholder="Taxa de juros: meses % ">
-                <input type="number" id="idTempo" placeholder="Digite o período em: meses">
+                <label>Valor inicial</label>
+                <input type="number" id="idValor_inicial" placeholder="R$">
+                <label>Taxa de juros</label>
+                <input type="number" id="idTaxa" placeholder="meses">
+                <label>Digite o período em</label>
+                <input type="number" id="idTempo" placeholder="meses">
                 <button type="submit" py-click="juros_simples()">Calcular</button>
                 <p id="text_output"></p>
             </div>
+            <p class="descricao">
+                Cálculo de Juros Compostos Os juros compostos crescem de forma exponencial, pois sua base de cálculo é 
+                sempre em cima do montante anterior. Faça esse cálculo financeiro de forma simples utilizando nossa calculadora!
+            </p>
         </div>
     </main>
 </body>

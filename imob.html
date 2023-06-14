@@ -2,10 +2,13 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="../imob">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
@@ -38,7 +41,6 @@
             except ZeroDivisionError:
                 erro_divisao = "Erro: divisão por zero, digite outros valores."
         </py-script>
-
         <header>
             <nav>
                 <div class="barra">
@@ -49,23 +51,33 @@
         </header>
         <main>
             <div class="tittle">
-                <h1>investimento imobiliario price</h1>
-                <h3>Utilize a calculadora de álcool ou gasolina e acabe de vez com as dúvidas dos dois utilizar para abastecer o seu veículo!</h3>
+                <h1>Simulador de Financiamento Imobiliário</h1>
+                <h3>Deseja financiar? Utilize o nosso simulador de financiamento de imóvel, descubra se vale a pena e quanto vai pagar no negócio!</h3>
             </div>
+            <div class="barra_de_calculo">
+                <h3>Calculadora Imobiliário</h3>
+                <label>valor do imovel</label>
+                <input type="number" id="Ivalor_imovel" name="valor_imovel" value="">
+                <label>valor entrada</label>
+                <input type="number" id="Ientrada_valor" name="entrada_valor" value="">
+                <label>taxa de juros</label>
+                <input type="number" id="Itaxa_juros" name="taxa_juros">
+                <label>prazo</label>
+                <input type="number" id="Iprazo" name="valor_prazo">
+                <button id="submit-button" type="submit" py-onclick="calculadora()">Calcular</button>
+                <p id="resultado"></p>
+                <p id="juros_mensal"></p>
+                <p id="valor_total"></p>
+                <p id="juros_total"></p>
 
-        <div>valor do imovel</div>
-        <input type="number" id="Ivalor_imovel" name="valor_imovel" value="">
-        <div>valor entrada</div>
-        <input type="number" id="Ientrada_valor" name="entrada_valor" value="">
-        <div>taxa de juros</div>
-        <input type="number" id="Itaxa_juros" name="taxa_juros">
-        <div>prazo</div>
-        <input type="number" id="Iprazo" name="valor_prazo">
-        <button id="submit-button" type="submit" py-onclick="calculadora()">Calcular</button>
-        <br><br>
-        <p id="resultado"></p>
-        <p id="juros_mensal"></p>
-        <p id="valor_total"></p>
-        <p id="juros_total"></p>
+                <p class="descricao">Como utilizar o simulador de financiamento imobiliário
+                    Para usar o nosso simulador de financiamento de imóvel, basta seguir as instruções abaixo:
+                    digite o valor do imóvel que você deseja comprar;
+                    Depois, insira o valor que deseja dar de entrada;
+                    Após isso, selecione a taxa de juros mensal que a empresa usa;
+                    Em seguida, na parte escrita “prazo“, selecione a quantidade de parcelas mensais que você deseja dividir o financiamento.
+                    Por fim, basta apertar em “CALCULAR“.</p>
+            </div>
+        </main>
     </body>
 </html>
