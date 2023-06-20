@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
 }
 
 .barra {
@@ -34,16 +35,14 @@
     border-radius: 20px;
     border: solid rebeccapurple 2px;
 }
-.calc h1 {
-    position: absolute;
-    top: 250px;
-}
 .line1 {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 .line2 {
     display: flex;
+    justify-content: center;
     gap: 20px;
     margin-top: 20px;
 }
