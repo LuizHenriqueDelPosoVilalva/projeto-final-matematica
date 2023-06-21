@@ -53,16 +53,16 @@
                 Faça esse cálculo financeiro de forma simples utilizando nossa calculadora!</h3>
         </div>
         <div class="barra_de_calculo">
-            <h3>Simulador de Juros Compostos</h3>
-            <div>
+            <h3>Simulador de Juros Compostos(Anual)</h3>
+            <div class="caixa-form">
                 <label>Valor inicial</label>
-                <input type="number" id="idValor_inicial" placeholder="R$">
-                <label>Valor da taxa</label>
-                <input type="number" id="idTaxa_ano" placeholder="anual">
-                <label>Período em</label>
-                <input type="number" id="idTempo_ano" placeholder="Anos">
+                <input type="number" id="idValor_inicial" placeholder="(Com ponto e não virgula) Digite o valor inicial">
+                <label>Valor da taxa(Anual)</label>
+                <input type="number" id="idTaxa_ano" placeholder="(Com ponto e não virgula) Digite a taxa">
+                <label>Período (Quantos anos?)</label>
+                <input type="number" id="idTempo_ano" placeholder="Digite o periodo">
                 <button type="submit" py-click="juros_composto_ano()">Calcular</button>
-                <p id="text_output"></p>
+                <p id="text_output" class="resposta"></p>
             </div>
             <p class="descricao">
                 Cálculo de Juros Compostos Os juros compostos crescem de forma exponencial, pois sua base de cálculo é 

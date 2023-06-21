@@ -53,11 +53,11 @@
         </div>
         <div class="barra_de_calculo">
             <h3>Cálculo de INSS</h3>
-            <div>
-                <label>Valor inicial</label>
-                <input type="number" id="idsalario" placeholder="R$">
+            <div class="caixa-form">
+                <label>Salário Bruto</label>
+                <input type="number" id="idsalario" placeholder="(Com ponto e não virgula) Digite o valor do seu salario bruto">
                 <button type="submit" py-click="calcular_inss()">Calcular</button>
-                <p id="text_output"></p>
+                <p id="text_output" class="resposta"></p>
             </div>
             <p class="descricao">Como utilizar a calculadora do INSS Para saber quanto você precisará contribuir com o INSS usando a nossa calculadora, 
                 você só precisa realizar dois passos muito simples: Inserir o valor do seu salário bruto (que pode ser encontrado na sua carteira de trabalho 

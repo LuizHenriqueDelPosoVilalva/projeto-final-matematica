@@ -52,16 +52,16 @@
             <h3>Juros simples são acrescidos somente em cima do valor inicial ao final de cada período, mantendo assim um crescimento constante. Calcule de forma simples!</h3>
         </div>
         <div class="barra_de_calculo">
-            <h3>Simulador de Juros Compostos Mensal</h3>
-            <div>
+            <h3>Simulador de Juros Compostos (Mensal)</h3>
+            <div class="caixa-form">
                 <label>Valor inicial</label>
-                <input type="number" id="idValor_inicial" placeholder="R$">
-                <label>Taxa de juros</label>
-                <input type="number" id="idTaxa" placeholder="meses">
-                <label>Digite o período em</label>
-                <input type="number" id="idTempo" placeholder="meses">
+                <input type="number" id="idValor_inicial" placeholder="(Com ponto e não virgula) Digite o valor inicial">
+                <label>Taxa de juros(Mensal)</label>
+                <input type="number" id="idTaxa" placeholder="(Com ponto e não virgula) Digite a taxa">
+                <label>Período(Quantos meses?)</label>
+                <input type="number" id="idTempo" placeholder="Digite o periodo">
                 <button type="submit" py-click="juros_simples()">Calcular</button>
-                <p id="text_output"></p>
+                <p id="text_output" class="resposta"></p>
             </div>
             <p class="descricao">
                 Cálculo de Juros Compostos Os juros compostos crescem de forma exponencial, pois sua base de cálculo é 

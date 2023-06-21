@@ -49,15 +49,15 @@
         </div>
         <div class="barra_de_calculo">
             <h3>Cálculo do Combustível</h3>
-            <div>
+            <div class="caixa-form">
                 <label for="fdistancia">Distância percorrida</label>
-                <input type="number" id="idDistacia" name="fdistancia" placeholder="km">
+                <input type="number" id="idDistacia" name="fdistancia" placeholder="(Com ponto e não virgula) digite a distancia a ser percorrida em Km">
                 <label for="fmediaGasolina">Consumo médio do veículo</label>
-                <input type="number" id="idMediaGasolina" name="fmediaGasolina" placeholder="km/L">
+                <input type="number" id="idMediaGasolina" name="fmediaGasolina" placeholder="(Com ponto e não virgula) Digite o consumo médio do veiculo">
                 <label for="fgasolina">Preço por litro</label>
-                <input type="number" id="idGasolina" name="fgasolina" placeholder="R$">
+                <input type="number" id="idGasolina" name="fgasolina" placeholder="(Com ponto e não virgula) Digite o valor da gasolina">
                 <button type="submit" py-click="valor_combustivel_a_pagar()">Calcular</button>
-                <p id="text_output"></p>
+                <p id="text_output" class="resposta"></p>
             </div>
             <p class="descricao">Para calcular o valor a ser pago na gasolina com base na distância a percorrer, 
                 consumo médio do carro e o preço da gasolina, você pode usar a seguinte fórmula:
